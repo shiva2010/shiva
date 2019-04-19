@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: firsthello-service
+spec:
+  selector:
+    app: firsthello
+  ports:
+  - protocol: TCP
+    port: 8011
+    targetPort: 80
+    name: fh
+  type: NodePort

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: firsthello-deployment
+  labels:
+    app: firsthello
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: firsthello
+  template:
+    metadata:
+      labels:
+        app: firsthello
+    spec:
+      containers:
+      - name: firsthello
+        image: msrinivascharan/docker-kubernetes:module1
+        ports:
+        - containerPort: 80
